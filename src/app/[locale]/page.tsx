@@ -35,6 +35,40 @@ export default function Home() {
 
   console.log('Current locale:', locale);
 
+  // Testimonials slider state/hooks
+  const reviews = [
+    { src: "/Review1.jpg", alt: "Fiverr review 1" },
+    { src: "/Review2.jpg", alt: "Fiverr review 2" },
+    { src: "/Review3.jpg", alt: "Fiverr review 3" },
+    { src: "/Review4.jpg", alt: "Fiverr review 4" },
+    { src: "/Review5.jpg", alt: "Fiverr review 5" },
+    { src: "/Review6.jpg", alt: "Fiverr review 6" },
+    { src: "/Review7.jpg", alt: "Fiverr review 7" },
+    { src: "/Review8.jpg", alt: "Fiverr review 8" },
+    { src: "/Review9.jpg", alt: "Fiverr review 9" },
+    { src: "/Review10.jpg", alt: "Fiverr review 10" },
+    { src: "/Review11.jpg", alt: "Fiverr review 11" },
+    { src: "/Review12.jpg", alt: "Fiverr review 12" },
+    { src: "/Review13.jpg", alt: "Fiverr review 13" },
+    { src: "/Review14.jpg", alt: "Fiverr review 14" },
+    { src: "/Review15.jpg", alt: "Fiverr review 15" },
+    { src: "/Review16.jpg", alt: "Fiverr review 16" },
+    { src: "/Review17.jpg", alt: "Fiverr review 17" },
+  ];
+  const [testimonialIndex, setTestimonialIndex] = useState(0);
+  const [testimonialModal, setTestimonialModal] = useState<{src: string, alt: string} | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 640);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+  const testimonialVisible = isMobile ? [reviews[testimonialIndex]] : [reviews[testimonialIndex], reviews[(testimonialIndex+1)%reviews.length]];
+  const goTestimonialLeft = () => setTestimonialIndex((prev) => (prev - 1 + reviews.length) % reviews.length);
+  const goTestimonialRight = () => setTestimonialIndex((prev) => (prev + 1) % reviews.length);
+  const closeTestimonialModal = () => setTestimonialModal(null);
+
   return (
     <div className="min-h-screen bg-white flex flex-col overflow-x-auto">
       {/* Main Header Navigation */}
@@ -864,6 +898,41 @@ export default function Home() {
             </div>
           </section>
 
+          {/* Testimonials Section - Fiverr Reviews */}
+          <section id="testimonials" className="mt-12 sm:mt-20 scroll-mt-24 w-full flex flex-col items-center">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <h2 className="text-3xl font-bold text-gray-900 text-center">{translate('testimonials.title')}</h2>
+              <a href="https://www.fiverr.com/s/xX7kD9a" target="_blank" rel="noopener noreferrer" className="ml-2 flex items-center gap-1 px-3 py-1 rounded bg-green-500 hover:bg-green-600 text-white font-semibold text-sm shadow transition">
+                <FaLink className="w-5 h-5" /> Fiverr
+              </a>
+            </div>
+            <div className="relative w-full flex justify-center items-center">
+              <button onClick={goTestimonialLeft} aria-label="Previous review" className="absolute left-0 top-1/2 -translate-y-1/2 bg-orange-500 hover:bg-orange-600 text-white rounded-full p-2 shadow z-10 disabled:opacity-40" style={{left: '-2rem'}}>
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>
+              </button>
+              <div className="flex gap-6 w-full max-w-3xl justify-center">
+                {testimonialVisible.map((review, i) => (
+                  <div key={i} className="bg-white rounded-xl shadow-lg p-2 flex flex-col items-center w-full max-w-lg border border-orange-100 cursor-pointer transition-transform hover:scale-105" onClick={() => setTestimonialModal(review)}>
+                    <img src={review.src} alt={review.alt} className="rounded-lg object-contain w-full h-56 mb-2 border" />
+                  </div>
+                ))}
+              </div>
+              <button onClick={goTestimonialRight} aria-label="Next review" className="absolute right-0 top-1/2 -translate-y-1/2 bg-orange-500 hover:bg-orange-600 text-white rounded-full p-2 shadow z-10 disabled:opacity-40" style={{right: '-2rem'}}>
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </button>
+            </div>
+            {/* Modal for full-size review */}
+            {testimonialModal && (
+              <div className="fixed inset-0 z-[200] flex items-center justify-center bg-black/70" onClick={closeTestimonialModal}>
+                <div className="relative max-w-2xl w-full p-4" onClick={e => e.stopPropagation()}>
+                  <button onClick={closeTestimonialModal} className="absolute top-2 right-2 bg-white rounded-full p-2 shadow text-orange-600 hover:bg-orange-100 z-10" aria-label="Close">
+                    <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                  </button>
+                  <img src={testimonialModal.src} alt={testimonialModal.alt} className="rounded-lg object-contain w-full max-h-[80vh] border bg-white" />
+                </div>
+              </div>
+            )}
+          </section>
           {/* Contact Section - Thank You & Ways to Contact */}
           <section id="contact" className="mt-8 sm:mt-16 scroll-mt-24 w-full">
             {/* Top orange accent bars */}

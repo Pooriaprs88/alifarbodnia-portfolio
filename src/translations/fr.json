@@ -1,23 +1,160 @@
 {
+  "greeting": "Bonjour",
+  "about": "À propos de moi",
+  "contact": "Contact",
+  "site": {
+    "title": "Ali Farbodnia",
+    "subtitle": "Instrumentiste et compositeur iranien de bois traditionnels"
+  },
   "nav": {
     "myBook": "Mon Livre",
-    "albums": "Albums & Bandes Sonores",
+    "albums": "Albums & Bandes originales",
     "performances": "Performances & Concerts",
     "contact": "Contact"
   },
   "bio": {
-    "title": "Instrumentiste à vent folklorique et compositeur iranien",
-    "description": "Né en 1983 à Mashhad, en Iran, est un joueur d'instruments à vent folkloriques iraniens tels que le Ney persan, le Duduk, la Cornemuse persane, la Clarinette persane, auteur-compositeur et compositeur, et un membre distingué de la Maison de la Musique iranienne. Il est le fils de Mohammad Farbodnia, un sculpteur iranien renommé et diplômé de l'École des Beaux-Arts de Paris (Promotion 1975).",
-    "description2": "Dès son plus jeune âge, il s'est passionné pour les instruments à vent traditionnels iraniens et a commencé à apprendre le Ney sous la direction de son père. Pendant son adolescence, il a étudié avec plusieurs grands maîtres du Ney et de la clarinette persane, notamment Hassan Kassai, Mohammad Ali Kiani Nejad et Mohammad Mousavi. Il a également étudié le Radif classique de la musique persane avec le légendaire Mohammad Reza Lotfi, sous la supervision duquel il a développé une nouvelle technique de doigté pour le Ney. Cette technique a été publiée plus tard dans son livre \"Nava-ye Ney\" en 2010, qui a été bien accueilli par les étudiants et les passionnés du Ney."
+    "intro1": "Né en 1983 à Mashhad, en Iran, il est un joueur iranien d'instruments à vent traditionnels tels que le Ney persan, le Duduk, la cornemuse persane, la clarinette persane, auteur-compositeur et membre estimé de la Maison de la Musique d'Iran. Il est le fils de Mohammad Farbodnia, sculpteur iranien renommé et diplômé de l'École des Beaux-Arts de Paris (promotion 1975).",
+    "intro2": "Dès son plus jeune âge, il s'est passionné pour les instruments à vent traditionnels iraniens et a commencé à apprendre le Ney sous la direction de son père. Pendant son adolescence, il a étudié auprès de plusieurs grands maîtres du Ney et de la clarinette persane, dont Hassan Kassai, Mohammad Ali Kiani Nejad et Mohammad Mousavi. Il a également étudié le radif classique de la musique persane avec le légendaire Mohammad Reza Lotfi, sous la supervision duquel il a développé une nouvelle technique de doigté pour le Ney. Cette technique a ensuite été publiée dans son livre \"Nava-ye Ney\" en 2010, qui a été bien accueillie parmi les étudiants et passionnés du Ney."
   },
-  "sections": {
-    "myBook": "Mon Livre",
-    "albums": "ALBUMS & BANDES SONORES",
-    "performances": "Performances & Concerts",
-    "contact": "Contact"
+  "badges": {
+    "vazir": "Orchestre de Musique Vaziri",
+    "hesar": "Ensemble Hamnavazan-e Hesar",
+    "sooreh": "Groupe de Musique Sooreh",
+    "tar": "Groupe de Musique Folk Tār",
+    "lotfi": "Le Meilleur du Maître Mohammad Reza Lotfi",
+    "khayyam": "Ensemble Khaneyagaran-e Khayyam",
+    "alest": "Groupe de Musique Alest"
+  },
+  "book": {
+    "title": "Navaye-Ney",
+    "edition": "3ème Édition",
+    "subtitle": "Partitions pour l'instrument Ney",
+    "description": "Le livre Navaye Ney a été publié en 2010 par les éditions Chekad Honar en Iran. Cet ouvrage présente une méthode innovante de doigté pour le Ney, améliorant considérablement la facilité et l'efficacité du jeu de l'instrument. Le livre comprend dix pièces originales composées par Ali Farbodnia, ainsi qu'une sélection de compositions célèbres du répertoire musical iranien, initialement écrites pour divers instruments, qui ont été transcrites et arrangées pour le Ney par l'auteur. Navaye Ney en est maintenant à sa troisième édition et est disponible pour les passionnés sur plusieurs plateformes en ligne.",
+    "publisher": "-Mahoor-",
+    "purchase": "Acheter le livre"
+  },
+  "albums": {
+    "title": "ALBUMS & BANDES ORIGINALES",
+    "duduk": {
+      "title": "Pack d'échantillons de Duduk / société : ancient-sound",
+      "link": "Lien : Duduk joué par Ali Farbodnia"
+    },
+    "waitingForSun": {
+      "title": "\"En attendant le soleil\"\nCompositeur : Hisham Kharma",
+      "link": "Lien : Ney & Duduk joué par Ali Farbodnia"
+    },
+    "mawlana": {
+      "title": "\"Mawlana\" compositeur : Chaama x Zamane",
+      "link": "Lien : Ney joué par Ali Farbodnia"
+    },
+    "habrban": {
+      "title": "\"Habrban\" chansons folkloriques arméniennes\nArrangements par Farya Faraji",
+      "link": "Lien : Duduk joué par Ali Farbodnia"
+    },
+    "miravi": {
+      "title": "\"Miravi\" Fatemeh Mehlaban\nCompositeur : Ali Farbodnia",
+      "link": "Lien : compositeur : Ali Farbodnia"
+    },
+    "vaDobarehBahar": {
+      "title": "\"Va Dobareh Bahar\" Omid Nasri\nCompositeur & paroles : Ali Farbodnia",
+      "link": "Lien : compositeur & paroles : Ali Farbodnia"
+    },
+    "changEshgh": {
+      "title": "\"Chang-e-Eshgh\"",
+      "link": "Lien : compositeur & Ney joué par Ali Farbodnia"
+    },
+    "sanamENahanjar": {
+      "title": "\"Sanam-e-Nahanjar\" Ali Ghamsari",
+      "link": "Lien : Clarinette jouée par Ali Farbodnia"
+    },
+    "lullabyAzaldi": {
+      "title": "Musique de film pour \"Lullaby-Azaldi\"\nRéalisé par Aurélien Cavagna",
+      "link": "Lien : Musique : Ali Farbodnia"
+    },
+    "majESoda": {
+      "title": "Moj-e-Soda",
+      "subtitle": "Ancien album de musique"
+    },
+    "dariusTheGreat": {
+      "title": "Darius-le-Grand compositeur Farya Faraji Persan",
+      "link": "Lien : Ney : Ali Farbodnia"
+    },
+    "paeizTaPaeiz": {
+      "title": "Paeiz-Ta-Paeiz",
+      "subtitle": "Ancien album de musique"
+    },
+    "mastanye": {
+      "title": "Musique de film pour \"Mastanye\" réalisé par Sharan Art (Inde)",
+      "link": "Duduk joué dans ce film : Ali Farbodnia"
+    },
+    "dinesht": {
+      "title": "Dinesht album de musique folklorique bakhtiari",
+      "subtitle": "Ney joué dans le concert Dinesht : Ali Farbodnia"
+    }
+  },
+  "performances": {
+    "title": "Performances & Concerts",
+    "hesar": {
+      "title": "ENSEMBLE HAMNAVAZAN E HESAR",
+      "subtitle": "DIRIGÉ PAR LE MAÎTRE ALI GHAMSARI",
+      "description": "Ali Ghamsari est l'un des jeunes talents les plus prometteurs de la musique iranienne. Il est joueur de tar et compositeur, ayant participé à de nombreux festivals. Ali Farbodnia collabore avec cet artiste depuis 2017. L'une de leurs collaborations les plus remarquables est la série de dix concerts \"Sanam-e-Nahanjar\" à la salle Arasbaran à Téhéran.",
+      "event": "Concert \"Sanam-e Nahanjar\", Centre Culturel Arasbaran, Téhéran (2019)",
+      "type": "Événement musical"
+    },
+    "vaziri": {
+      "title": "ORCHESTRE DE MUSIQUE VAZIRI",
+      "subtitle": "PAR LE MAÎTRE KEYVAN SAKET",
+      "description": "Keyvan Saket est l'un des plus grands musiciens iraniens contemporains. Il dirige l'ensemble de musique Vaziri et s'est produit avec ce groupe à travers le monde. Ali Farbodnia collabore avec cet ensemble depuis 2009.",
+      "concerts": "Salle Simorgh, Neyshabur (2009) et Salle Vahdat, Téhéran (2020)",
+      "participation": "Il a participé en tant que joueur de ney à l'enregistrement de divers albums de musique iranienne et à de nombreux concerts aux côtés du maître Keyvan Saket. Parmi les performances notables figurent le concert de Neyshabur en 2009 et celui de la salle Vahdat en 2020 avec le chanteur Vahid Taj."
+    },
+    "fajr": {
+      "title": "FESTIVAL FAJR",
+      "subtitle": "ENSEMBLE KHANEYAGRAN-E-KHAYYAM",
+      "description": "Le groupe de musique Khonyagaran-e-Khayyam est l'un des meilleurs groupes musicaux de l'est de l'Iran, jouant de la musique iranienne et folklorique depuis 15 ans. Réalisations majeures : Parmi les principales réalisations du groupe figurent la sélection comme meilleur groupe au 34e Festival International de Musique Fajr à Téhéran en 2019, et la sélection au Festival de Musique Mugham en Azerbaïdjan en 2017. Ali Farbodnia continue de collaborer avec ce groupe pour l'enregistrement de divers albums de musique.\nAli Farbodnia travaille avec ce groupe depuis 2010 en tant que joueur de Ney et, lors de certaines performances, en tant que compositeur.",
+      "event": "34e Festival International de Musique Fajr, Salle Azadi, Téhéran (2019)"
+    },
+    "mugham": {
+      "title": "FESTIVAL MUGHAM",
+      "subtitle": "ENSEMBLE KHANEYAGRAN-E-KHAYYAM",
+      "description": "Farbodnia, avec l'ensemble musical \"Khonyagaran-e-Khayyam\", a participé au Festival International Mugham 2017 en Azerbaïdjan. Le groupe a été sélectionné comme l'un des ensembles distingués de cette année-là et s'est produit lors de la cérémonie de clôture au Conservatoire d'État d'Azerbaïdjan. Farbodnia a participé au groupe en tant que joueur de Ney et compositeur.",
+      "event": "Festival International de Musique Mugham, Azerbaïdjan (2017)"
+    },
+    "lotfi": {
+      "title": "LE MEILLEUR DU MAÎTRE MOHAMADREZA LOTFI",
+      "subtitle": "TÉHÉRAN 2017",
+      "description": "Le meilleur du maître Mohamed Reza Lotfi\nEn 2017, une commémoration pour les grands maîtres de la musique iranienne Mohammad Reza Lotfi et Parviz Meshkatian a eu lieu à la salle Andisheh à Téhéran. Pour cet événement, un groupe a été formé à partir des étudiants sélectionnés du maître Mohammad Reza Lotfi, et Ali Farbodnia a eu l'honneur d'accompagner le groupe en tant que joueur de ney.",
+      "contributions": {
+        "title": "Contributions du Maître Lotfi",
+        "text": "La performance était un hommage sincère qui célébrait l'héritage profond des contributions du maître Lotfi à la musique classique persane. L'ensemble, composé de ses disciples les plus dévoués, a cherché à capturer l'essence de son style unique — sa profonde compréhension du radif, ses improvisations émouvantes et son approche spirituelle du tar et du setar. Le public a été ému par la puissante synergie entre les musiciens, en particulier le délicat dialogue entre le ney et les instruments à cordes, qui reflétait les propres enseignements du maître sur le dialogue et l'expression musicale."
+      }
+    },
+    "feyksahne": {
+      "title": "GROUPE DE TAR FEYKSAHNE",
+      "subtitle": "CONCERT D'ISTANBUL 2024",
+      "description": "La musique a toujours été le langage de la paix pour l'humanité, et elle sert de messager de paix et d'amitié entre les nations. En 2017, Ali Farbodnia a fondé le groupe de musique \"Tar\" avec un groupe d'amis musiciens, se concentrant sur la musique locale iranienne. La musique folklorique iranienne a un grand potentiel pour les performances internationales, et il a toujours essayé de créer un nouveau mélange en incorporant des instruments de différentes cultures.\n\nParmi les performances notables du groupe figurent le Festival Tirgan au Canada en 2022,\nThéâtre Feyksahne d'Istanbul 2024\nSalle Ordibehesht de Mashad 2020"
+    },
+    "sohreh": {
+      "title": "GROUPE DE MUSIQUE SOHREH",
+      "subtitle": "IZMIR 2022 - GROUPE SOHREH",
+      "description": "Ali Farbodnia a joué en tant que joueur de Ney avec le groupe de musique iranienne \"Sohreh\" à Izmir en 2022. Lors de cette performance, la chanteuse iranienne Mme Roya Raei a rejoint le groupe, ainsi que plusieurs musiciens iraniens renommés tels que Farhad Rajabi au tar, Nafiseh Tabatabaei au ney, et le leader du groupe et joueur de santur Toofan Aytan. Cette performance a été l'un des événements musicaux iraniens mémorables à Izmir."
+    },
+    "alest": {
+      "title": "GROUPE DE MUSIQUE ALEST",
+      "subtitle": "IZMIR 2025 - GROUPE ALEST",
+      "description": "En avril 2025, Ali Farbodnia s'est produit à Izmir avec le groupe Alast. Il a participé en tant que joueur de ney, arrangeur et chanteur sur certains morceaux. Le groupe comprenait Nafiseh Tabatabaei au ney, Mona Navazi au oud, Amir Haghneer aux percussions et Tufan Ayetan au santur. Lors de cette performance, Alast a réinterprété la musique traditionnelle du Khorasan, mêlant des mélodies anciennes à un nouvel arrangement orchestral."
+    }
   },
   "contact": {
-    "title": "Merci !",
-    "subtitle": "Moyens de me contacter"
+    "thankYou": "Merci !",
+    "waysToContact": "Moyens de me contacter",
+    "email": "A.farbodnia@gmail.com",
+    "youtube": "Ma chaîne Youtube",
+    "instagram": "Mon Instagram",
+    "fiverr": "Mon Fiverr",
+    "spotify": "Mon Spotify"
+  },
+  "testimonials": {
+    "title": "Ce que mes clients disent sur Fiverr"
   }
 } 

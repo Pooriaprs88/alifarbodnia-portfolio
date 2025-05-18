@@ -1,6 +1,6 @@
 import { useParams } from 'next/navigation';
-import enTranslations from '../../locales/en.json';
-import frTranslations from '../../locales/fr.json';
+import enTranslations from '../translations/en.json';
+import frTranslations from '../translations/fr.json';
 
 const translations = {
   en: enTranslations,
