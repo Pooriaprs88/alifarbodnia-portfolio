@@ -91,7 +91,7 @@ export default function Home() {
             <a href="https://youtube.com/@alifarbodnia?si=brU9QaL-TaX8eqCF" title="My Youtube" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-orange-600 transition-colors"><FaYoutube /></a>
             <a href="https://www.instagram.com/alifarbodnia/profilecard/?igsh=MXI3Z2xyd2h4cTNobQ==" title="My Instagram" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-orange-600 transition-colors"><FaInstagram /></a>
             <a href="https://open.spotify.com/artist/7s8YtMTj8iNp9PUVX3a3CS?si=EtS7qZmJTsaCvVXtKuHQCQ" title="My Spotify" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-orange-600 transition-colors"><FaSpotify /></a>
-            <a href="https://www.fiverr.com/s/xX7kD9a" title="My Fiverr" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-orange-600 transition-colors"><FaLink /></a>
+            <a href="https://www.fiverr.com/farbodnia" title="Fiverr" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-orange-600 transition-colors"><FaLink /></a>
             <button
               onClick={handleLocaleSwitch}
               className="ml-2 px-3 py-1 rounded border border-orange-400 text-orange-600 bg-white hover:bg-orange-50 font-semibold text-sm transition"
@@ -902,9 +902,12 @@ export default function Home() {
           <section id="testimonials" className="mt-12 sm:mt-20 scroll-mt-24 w-full flex flex-col items-center">
             <div className="flex items-center justify-center gap-3 mb-4">
               <h2 className="text-3xl font-bold text-gray-900 text-center">{translate('testimonials.title')}</h2>
-              <a href="https://www.fiverr.com/s/xX7kD9a" target="_blank" rel="noopener noreferrer" className="ml-2 flex items-center gap-1 px-3 py-1 rounded bg-green-500 hover:bg-green-600 text-white font-semibold text-sm shadow transition">
+              <a href="https://www.fiverr.com/farbodnia" title="Fiverr" target="_blank" rel="noopener noreferrer" className="ml-2 flex items-center gap-1 px-3 py-1 rounded bg-green-500 hover:bg-green-600 text-white font-semibold text-sm shadow transition">
                 <FaLink className="w-5 h-5" /> Fiverr
               </a>
+            </div>
+            <div className="flex justify-center mb-6 w-full">
+              <Image src="/ReviewFiverr.jpg" alt="Fiverr Profile Screenshot" width={480} height={160} className="rounded-xl shadow-lg object-contain w-full max-w-xl h-auto" />
             </div>
             <div className="relative w-full flex justify-center items-center">
               <button onClick={goTestimonialLeft} aria-label="Previous review" className="absolute left-0 top-1/2 -translate-y-1/2 bg-orange-500 hover:bg-orange-600 text-white rounded-full p-2 shadow z-10 disabled:opacity-40" style={{left: '-2rem'}}>
@@ -964,7 +967,7 @@ export default function Home() {
                 </div>
                 <div className="flex items-center gap-4 justify-center">
                   <span className="bg-orange-500 text-white rounded-full p-2 text-2xl flex items-center justify-center"><FaLink /></span>
-                  <a href="https://www.fiverr.com/s/xX7kD9a" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-orange-600 transition-colors break-all">{translate('contact.fiverr')}</a>
+                  <a href="https://www.fiverr.com/farbodnia" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-orange-600 transition-colors break-all">{translate('contact.fiverr')}</a>
                 </div>
                 <div className="flex items-center gap-4 justify-center">
                   <span className="bg-orange-500 text-white rounded-full p-2 text-2xl flex items-center justify-center"><FaSpotify /></span>
