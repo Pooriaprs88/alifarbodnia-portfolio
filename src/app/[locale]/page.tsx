@@ -36,122 +36,124 @@ export default function Home() {
   console.log('Current locale:', locale);
 
   return (
-    <div className="min-h-screen bg-white flex flex-col">
-      {/* Sticky Header Navigation */}
-      <header className="sticky top-0 z-50 w-full bg-white border-b border-orange-200 shadow-sm">
+    <div className="min-h-screen bg-white flex flex-col overflow-x-auto">
+      {/* Main Header Navigation */}
+      <header className="fixed top-0 left-0 right-0 z-[100] w-full bg-white/95 backdrop-blur-sm border-b border-orange-200 shadow-sm">
         <nav className="flex items-center justify-between py-3 px-4 text-base font-semibold text-gray-700">
-          {/* Logo or Name (optional) */}
+          {/* Logo or Name (left) */}
           <a href="#" className="font-bold text-orange-600 text-lg hover:underline focus:outline-none" aria-label="Go to top">Ali Farbodnia</a>
-          {/* Desktop Nav */}
-          <div className="hidden md:flex gap-6">
-            <a href="#my-book" className="hover:text-orange-600 transition-colors">{translate('nav.myBook')}</a>
-            <a href="#albums" className="hover:text-orange-600 transition-colors">{translate('nav.albums')}</a>
-            <a href="#performances" className="hover:text-orange-600 transition-colors">{translate('nav.performances')}</a>
-            <a href="#contact" className="hover:text-orange-600 transition-colors">{translate('nav.contact')}</a>
+          {/* Centered Nav Links */}
+          <div className="flex-1 flex justify-center">
+            <div className="hidden md:flex gap-8">
+              <a href="#my-book" className="hover:text-orange-600 transition-colors">{translate('nav.myBook')}</a>
+              <a href="#albums" className="hover:text-orange-600 transition-colors">{translate('nav.albums')}</a>
+              <a href="#performances" className="hover:text-orange-600 transition-colors">{translate('nav.performances')}</a>
+              <a href="#contact" className="hover:text-orange-600 transition-colors">{translate('nav.contact')}</a>
+            </div>
           </div>
-          {/* Hamburger for Mobile */}
-          <button className="md:hidden flex items-center" onClick={() => setNavOpen(!navOpen)} aria-label="Open navigation">
-            <svg className="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
-        </nav>
-        {/* Mobile Nav Dropdown */}
-        {navOpen && (
-          <div className="md:hidden flex flex-col gap-2 px-6 pb-4 bg-white border-b border-orange-200 animate-fade-in">
-            <a href="#my-book" className="py-2 hover:text-orange-600 transition-colors" onClick={() => setNavOpen(false)}>{translate('nav.myBook')}</a>
-            <a href="#albums" className="py-2 hover:text-orange-600 transition-colors" onClick={() => setNavOpen(false)}>{translate('nav.albums')}</a>
-            <a href="#performances" className="py-2 hover:text-orange-600 transition-colors" onClick={() => setNavOpen(false)}>{translate('nav.performances')}</a>
-            <a href="#contact" className="py-2 hover:text-orange-600 transition-colors" onClick={() => setNavOpen(false)}>{translate('nav.contact')}</a>
-          </div>
-        )}
-      </header>
-      {/* Main Content with responsive padding */}
-      <div className="flex-1 flex flex-row p-0 md:p-0">
-        {/* Left Accent Bar - responsive height */}
-        <div className="w-2 md:w-3 bg-orange-400" />
-        {/* Main Content */}
-        <div className="flex-1 flex flex-col p-3 sm:p-4 md:p-8 lg:p-16">
-          {/* Top Socials and Language Switcher */}
-          <div className="flex justify-end gap-6 text-lg mb-8 items-center">
+          {/* Social Icons + Language Switcher (right) */}
+          <div className="flex items-center gap-3 ml-4">
             <a href="mailto:a.farbodnia@gmail.com" title="Email" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-orange-600 transition-colors"><FaEnvelope /></a>
             <a href="https://youtube.com/@alifarbodnia?si=brU9QaL-TaX8eqCF" title="My Youtube" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-orange-600 transition-colors"><FaYoutube /></a>
             <a href="https://www.instagram.com/alifarbodnia/profilecard/?igsh=MXI3Z2xyd2h4cTNobQ==" title="My Instagram" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-orange-600 transition-colors"><FaInstagram /></a>
             <a href="https://open.spotify.com/artist/7s8YtMTj8iNp9PUVX3a3CS?si=EtS7qZmJTsaCvVXtKuHQCQ" title="My Spotify" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-orange-600 transition-colors"><FaSpotify /></a>
             <a href="https://www.fiverr.com/s/xX7kD9a" title="My Fiverr" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-orange-600 transition-colors"><FaLink /></a>
-            {/* Language Switcher */}
             <button
               onClick={handleLocaleSwitch}
-              className="ml-4 px-3 py-1 rounded border border-orange-400 text-orange-600 bg-white hover:bg-orange-50 font-semibold text-sm transition"
+              className="ml-2 px-3 py-1 rounded border border-orange-400 text-orange-600 bg-white hover:bg-orange-50 font-semibold text-sm transition"
               aria-label="Switch language"
             >
               {otherLocale.toUpperCase()}
             </button>
+            {/* Hamburger for Mobile - always visible */}
+            <button className="md:hidden flex items-center ml-2 z-[102]" onClick={() => setNavOpen(!navOpen)} aria-label={navOpen ? "Close navigation" : "Open navigation"}>
+              {navOpen ? (
+                // X icon
+                <svg className="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                // Hamburger icon
+                <svg className="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
+            </button>
           </div>
-          <div className="flex flex-col md:flex-row gap-12 items-center md:items-start">
-            {/* Profile Image */}
-            <div className="flex-shrink-0">
-              <div className="relative w-64 h-64 flex items-center justify-center">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-orange-300 via-orange-100 to-white p-1" />
-                <div className="relative rounded-full overflow-hidden w-64 h-64 shadow-xl border-4 border-white">
-                  <Image src="/profile.jpg" alt="Ali Farbodnia" width={320} height={320} className="object-cover w-full h-full" />
-                </div>
+        </nav>
+      </header>
+      {/* Mobile Nav Dropdown */}
+      {navOpen && (
+        <div className="md:hidden flex flex-col gap-2 px-6 pb-4 bg-white border-b border-orange-200 shadow-lg z-[101] fixed top-[64px] left-0 right-0">
+          <a href="#my-book" className="py-3 text-lg font-semibold text-gray-900 hover:text-orange-600 transition-colors border-b border-orange-100" onClick={() => setNavOpen(false)}>{translate('nav.myBook')}</a>
+          <a href="#albums" className="py-3 text-lg font-semibold text-gray-900 hover:text-orange-600 transition-colors border-b border-orange-100" onClick={() => setNavOpen(false)}>{translate('nav.albums')}</a>
+          <a href="#performances" className="py-3 text-lg font-semibold text-gray-900 hover:text-orange-600 transition-colors border-b border-orange-100" onClick={() => setNavOpen(false)}>{translate('nav.performances')}</a>
+          <a href="#contact" className="py-3 text-lg font-semibold text-gray-900 hover:text-orange-600 transition-colors" onClick={() => setNavOpen(false)}>{translate('nav.contact')}</a>
+        </div>
+      )}
+      {/* Main Content with responsive padding */}
+      <div className="flex-1 flex flex-row p-0 md:p-0">
+        {/* Left Accent Bar - responsive height */}
+        <div className="w-2 md:w-3 bg-orange-400" />
+        {/* Main Content */}
+        <div className="flex-1 flex flex-col p-3 sm:p-4 md:p-8 lg:p-16 w-full max-w-full">
+          {/* Bio Section - Modern, Centered, Mobile-Friendly */}
+          <section className="w-full flex flex-col items-center mt-8 mb-12 max-w-full">
+            {/* Profile Image - Top, Centered */}
+            <div className="relative w-full max-w-xs sm:max-w-md flex items-center justify-center mb-6">
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-orange-300 via-orange-100 to-white p-1" />
+              <div className="relative rounded-full overflow-hidden w-full h-full shadow-xl border-4 border-white">
+                <Image src="/profile.jpg" alt="Ali Farbodnia" width={384} height={384} className="object-contain w-full h-full" />
               </div>
             </div>
-            
-            {/* Bio Content */}
-            <div className="max-w-2xl w-full">
-              <h1 className="text-5xl font-bold mb-2">Ali Farbodnia</h1>
-              <div className="text-orange-500 mb-2">{translate('site.subtitle')}</div>
-              <div className="bg-white/80 border border-orange-100 rounded-2xl shadow p-6 mb-4">
-                <div className="text-gray-700 mb-2 text-lg">
-                  {translate('bio.intro1')}
-                </div>
-                <div className="text-gray-700 text-lg">
-                  {translate('bio.intro2')}
-                </div>
-              </div>
-              {/* Group Badges */}
-              <div className="flex flex-wrap gap-3 mt-4">
-                <span className="bg-black text-white rounded-full px-4 py-2 text-sm font-semibold">{translate('badges.vazir')}</span>
-                <span className="bg-gray-800 text-white rounded-full px-4 py-2 text-sm font-semibold">{translate('badges.hesar')}</span>
-                <span className="bg-orange-200 text-orange-900 rounded-full px-4 py-2 text-sm font-semibold">{translate('badges.sooreh')}</span>
-                <span className="bg-orange-100 text-orange-800 rounded-full px-4 py-2 text-sm font-semibold">{translate('badges.tar')}</span>
-                <span className="bg-orange-700 text-white rounded-full px-4 py-2 text-sm font-semibold">{translate('badges.lotfi')}</span>
-                <span className="bg-yellow-200 text-yellow-900 rounded-full px-4 py-2 text-sm font-semibold">{translate('badges.khayyam')}</span>
-                <span className="bg-orange-300 text-orange-900 rounded-full px-4 py-2 text-sm font-semibold">{translate('badges.alest')}</span>
-              </div>
+            {/* Name and Subtitle */}
+            <h1 className="text-4xl sm:text-5xl font-bold mb-2 text-center text-gray-900">Ali Farbodnia</h1>
+            <div className="text-orange-500 mb-4 text-lg sm:text-xl font-semibold text-center">{translate('site.subtitle')}</div>
+            {/* Bio Card */}
+            <div className="w-full max-w-xl bg-white/80 border border-orange-100 rounded-2xl shadow p-6 mb-6 text-center overflow-x-auto">
+              <div className="text-gray-700 mb-2 text-lg">{translate('bio.intro1')}</div>
+              <div className="text-gray-700 text-lg">{translate('bio.intro2')}</div>
             </div>
-          </div>
+            {/* Badges - Scrollable on mobile, wrap on desktop */}
+            <div className="flex flex-wrap gap-1 mt-2 mb-2 overflow-x-auto sm:overflow-x-visible px-2 w-full justify-center">
+              <span className="rounded-full px-2 py-1 text-xs font-semibold sm:px-4 sm:py-2 sm:text-base sm:font-bold whitespace-nowrap" style={{background:'#171717',color:'#fff'}}>{translate('badges.vazir')}</span>
+              <span className="rounded-full px-2 py-1 text-xs font-semibold sm:px-4 sm:py-2 sm:text-base sm:font-bold whitespace-nowrap" style={{background:'#33302C',color:'#fff'}}>{translate('badges.hesar')}</span>
+              <span className="rounded-full px-2 py-1 text-xs font-semibold sm:px-4 sm:py-2 sm:text-base sm:font-bold whitespace-nowrap" style={{background:'#FFA552',color:'#33302C'}}>{translate('badges.sooreh')}</span>
+              <span className="rounded-full px-2 py-1 text-xs font-semibold sm:px-4 sm:py-2 sm:text-base sm:font-bold whitespace-nowrap" style={{background:'#FF8800',color:'#fff'}}>{translate('badges.tar')}</span>
+              <span className="rounded-full px-2 py-1 text-xs font-semibold sm:px-4 sm:py-2 sm:text-base sm:font-bold whitespace-nowrap" style={{background:'#B34E00',color:'#fff'}}>{translate('badges.lotfi')}</span>
+              <span className="rounded-full px-2 py-1 text-xs font-semibold sm:px-4 sm:py-2 sm:text-base sm:font-bold whitespace-nowrap" style={{background:'#FFA552',color:'#33302C'}}>{translate('badges.khayyam')}</span>
+              <span className="rounded-full px-2 py-1 text-xs font-semibold sm:px-4 sm:py-2 sm:text-base sm:font-bold whitespace-nowrap" style={{background:'#FF8800',color:'#fff'}}>{translate('badges.alest')}</span>
+            </div>
+          </section>
 
           {/* My Book Section */}
-          <section id="my-book" className="mt-16 scroll-mt-24 relative">
+          <section id="my-book" className="mt-8 sm:mt-16 scroll-mt-24 relative w-full">
             {/* Decorative musical note icon (background) */}
-            <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/3 opacity-10 pointer-events-none z-0 text-[16rem] text-orange-200 select-none">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" className="w-[12rem] h-[12rem] mx-auto">
+            <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/3 opacity-10 pointer-events-none z-0 text-[8rem] sm:text-[16rem] text-orange-200 select-none">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" className="w-[6rem] h-[6rem] sm:w-[12rem] sm:h-[12rem] mx-auto">
                 <path d="M48 8v32.5a10 10 0 1 1-4-8V16h-20v24.5a10 10 0 1 1-4-8V8h28z" fill="currentColor" />
               </svg>
             </div>
-            <h2 className="text-3xl font-bold mb-6 text-gray-800 relative z-10">{translate('nav.myBook')}</h2>
+            <h2 className="text-3xl font-bold mb-6 text-gray-800 relative z-10 text-center">{translate('nav.myBook')}</h2>
             <div className="border-t border-gray-200 pt-6 relative z-10">
-              <div className="flex flex-col lg:flex-row items-center justify-center gap-10 bg-gradient-to-br from-orange-50 via-white to-orange-100 p-10 rounded-2xl shadow-xl border border-orange-100">
+              <div className="flex flex-col lg:flex-row items-center justify-center gap-8 sm:gap-10 bg-gradient-to-br from-orange-50 via-white to-orange-100 p-4 sm:p-10 rounded-2xl shadow-xl border border-orange-100">
                 {/* Left Book Image */}
-                <div className="flex-1 flex justify-center mb-6 lg:mb-0">
-                  <Image src="/book1.jpg" alt="Melody Ney - Pieces For Ney" width={280} height={380} className="rounded-xl shadow-xl transition-transform duration-300 hover:scale-105 hover:shadow-2xl" />
+                <div className="flex-1 flex justify-center mb-4 lg:mb-0 w-full max-w-[220px] sm:max-w-[280px]">
+                  <Image src="/book1.jpg" alt="Melody Ney - Pieces For Ney" width={220} height={300} className="rounded-xl shadow-xl transition-transform duration-300 hover:scale-105 hover:shadow-2xl w-full h-auto object-contain" />
                 </div>
                 {/* Center Content */}
-                <div className="flex-[2] max-w-xl text-center lg:text-left px-2">
-                  <h3 className="text-3xl font-extrabold mb-2 text-orange-700 tracking-tight">{translate('book.title')} <span className="ml-2 bg-orange-200 text-orange-900 text-xs font-bold px-2 py-1 rounded-full align-middle">{translate('book.edition')}</span></h3>
-                  <div className="text-lg text-gray-700 mb-2 font-semibold">{translate('book.subtitle')}</div>
-                  <p className="text-gray-700 mb-4">
+                <div className="flex-[2] max-w-xl w-full text-center lg:text-left px-2">
+                  <h3 className="text-2xl sm:text-3xl font-extrabold mb-2 text-orange-700 tracking-tight">{translate('book.title')} <span className="ml-2 bg-orange-200 text-orange-900 text-xs font-bold px-2 py-1 rounded-full align-middle">{translate('book.edition')}</span></h3>
+                  <div className="text-base sm:text-lg text-gray-700 mb-2 font-semibold">{translate('book.subtitle')}</div>
+                  <p className="text-gray-700 mb-4 text-sm sm:text-base">
                     {translate('book.description')}
                   </p>
                   <hr className="my-4 border-gray-300" />
                   <div className="flex flex-col items-center gap-2">
                     <span className="font-bold text-gray-800">{translate('book.publisher')}</span>
-                    <Image src="/score.jpg" alt="Sample Score from Navaye-Ney" width={320} height={100} className="rounded shadow" />
-                    <a href="https://sazzbazz.com/product/%DA%A9%D8%AA%D8%A7%D8%A8-%D9%86%D9%88%D8%A7%DB%8C-%D9%86%DB%8C-%D9%82%D8%B7%D8%B9%D8%A7%D8%AA%DB%8C-%D8%A8%D8%B1%D8%A7%DB%8C-%D9%86%DB%8C/" target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold px-5 py-2 rounded-lg shadow transition">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                    <Image src="/score.jpg" alt="Sample Score from Navaye-Ney" width={220} height={80} className="rounded shadow w-full max-w-xs h-auto object-contain" />
+                    <a href="https://sazzbazz.com/product/%DA%A9%D8%AA%D8%A7%D8%A8-%D9%86%D9%88%D8%A7%DB%8C-%D9%86%DB%8C-%D9%82%D8%B7%D8%B9%D8%A7%D8%AA%DB%8C-%D8%A8%D8%B1%D8%A7%DB%8C-%D9%86%DB%8C/" target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold px-4 sm:px-5 py-2 rounded-lg shadow transition text-sm sm:text-base">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 sm:w-6 sm:h-6">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6A2.25 2.25 0 005.25 5.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M18 15l3-3m0 0l-3-3m3 3H9" />
                       </svg>
                       {translate('book.purchase')}
@@ -159,25 +161,25 @@ export default function Home() {
                   </div>
                 </div>
                 {/* Right Book Image */}
-                <div className="flex-1 flex justify-center mt-6 lg:mt-0">
-                  <Image src="/book2.jpg" alt="Navaye Ney - Ali Farbodnia" width={280} height={380} className="rounded-xl shadow-xl transition-transform duration-300 hover:scale-105 hover:shadow-2xl" />
+                <div className="flex-1 flex justify-center mt-4 lg:mt-0 w-full max-w-[220px] sm:max-w-[280px]">
+                  <Image src="/book2.jpg" alt="Navaye Ney - Ali Farbodnia" width={220} height={300} className="rounded-xl shadow-xl transition-transform duration-300 hover:scale-105 hover:shadow-2xl w-full h-auto object-contain" />
                 </div>
               </div>
             </div>
           </section>
 
           {/* Albums & Soundtracks Section */}
-          <section id="albums" className="mt-16 scroll-mt-24">
+          <section id="albums" className="mt-8 sm:mt-16 scroll-mt-24 w-full">
             <h2 className="text-3xl font-bold mb-6 text-gray-800">{translate('nav.albums')}</h2>
-            <div className="bg-white rounded-xl shadow-md p-8">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white rounded-xl shadow-md p-4 sm:p-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
                 {/* Duduk */}
                 <div className="flex flex-col items-center">
                   <a href="https://ancient-sounds.com/product/duduk-sample-pack-vol-2/" target="_blank" rel="noopener noreferrer">
-                    <Image src="/duduk.jpg" alt="Duduk Sample Pack" width={240} height={240} className="rounded shadow transition-transform duration-300 hover:scale-105 hover:shadow-xl" />
+                    <Image src="/duduk.jpg" alt="Duduk Sample Pack" width={240} height={240} className="rounded shadow transition-transform duration-300 hover:scale-105 hover:shadow-xl w-full h-auto object-contain" />
                   </a>
                   <div className="mt-4 text-center">
-                    <div className="font-semibold">{translate('albums.duduk.title')}</div>
+                    <div className="font-semibold text-gray-900">{translate('albums.duduk.title')}</div>
                     <a href="https://ancient-sounds.com/product/duduk-sample-pack-vol-2/" target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex items-center gap-2 text-orange-600 hover:text-orange-800 font-medium">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6A2.25 2.25 0 005.25 5.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M18 15l3-3m0 0l-3-3m3 3H9" />
@@ -189,10 +191,10 @@ export default function Home() {
                 {/* Waiting for the Sun */}
                 <div className="flex flex-col items-center">
                   <a href="https://youtu.be/xaghY0ipdC0?si=XnblZ-dt7IdSvP95" target="_blank" rel="noopener noreferrer">
-                    <Image src="/waiting-for-sun.jpg" alt="Waiting for the Sun" width={240} height={240} className="rounded shadow transition-transform duration-300 hover:scale-105 hover:shadow-xl" />
+                    <Image src="/waiting-for-sun.jpg" alt="Waiting for the Sun" width={240} height={240} className="rounded shadow transition-transform duration-300 hover:scale-105 hover:shadow-xl w-full h-auto object-contain" />
                   </a>
                   <div className="mt-4 text-center">
-                    <div className="font-semibold">{translate('albums.waitingForSun.title')}</div>
+                    <div className="font-semibold text-gray-900">{translate('albums.waitingForSun.title')}</div>
                     <a href="https://youtu.be/xaghY0ipdC0?si=XnblZ-dt7IdSvP95" target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex items-center gap-2 text-orange-600 hover:text-orange-800 font-medium">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6A2.25 2.25 0 005.25 5.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M18 15l3-3m0 0l-3-3m3 3H9" />
@@ -204,10 +206,10 @@ export default function Home() {
                 {/* Mawlana */}
                 <div className="flex flex-col items-center">
                   <a href="https://youtu.be/x4Mh71hB9b0?si=yqgBUFW6DK8EUIdr" target="_blank" rel="noopener noreferrer">
-                    <Image src="/mawlana.jpg" alt="Mawlana" width={240} height={240} className="rounded shadow transition-transform duration-300 hover:scale-105 hover:shadow-xl" />
+                    <Image src="/mawlana.jpg" alt="Mawlana" width={240} height={240} className="rounded shadow transition-transform duration-300 hover:scale-105 hover:shadow-xl w-full h-auto object-contain" />
                   </a>
                   <div className="mt-4 text-center">
-                    <div className="font-semibold">{translate('albums.mawlana.title')}</div>
+                    <div className="font-semibold text-gray-900">{translate('albums.mawlana.title')}</div>
                     <a href="https://youtu.be/x4Mh71hB9b0?si=yqgBUFW6DK8EUIdr" target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex items-center gap-2 text-orange-600 hover:text-orange-800 font-medium">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6A2.25 2.25 0 005.25 5.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M18 15l3-3m0 0l-3-3m3 3H9" />
@@ -219,10 +221,10 @@ export default function Home() {
                 {/* Habrban */}
                 <div className="flex flex-col items-center">
                   <a href="https://youtu.be/GNnFnPWzXAk?si=svuFP8o5sEJWCKSj" target="_blank" rel="noopener noreferrer">
-                    <Image src="/Habrban.jpg" alt="Habrban" width={240} height={240} className="rounded shadow transition-transform duration-300 hover:scale-105 hover:shadow-xl" />
+                    <Image src="/Habrban.jpg" alt="Habrban" width={240} height={240} className="rounded shadow transition-transform duration-300 hover:scale-105 hover:shadow-xl w-full h-auto object-contain" />
                   </a>
                   <div className="mt-4 text-center">
-                    <div className="font-semibold">{translate('albums.habrban.title')}</div>
+                    <div className="font-semibold text-gray-900">{translate('albums.habrban.title')}</div>
                     <a href="https://youtu.be/GNnFnPWzXAk?si=svuFP8o5sEJWCKSj" target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex items-center gap-2 text-orange-600 hover:text-orange-800 font-medium">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6A2.25 2.25 0 005.25 5.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M18 15l3-3m0 0l-3-3m3 3H9" />
@@ -234,10 +236,10 @@ export default function Home() {
                 {/* Miravi */}
                 <div className="flex flex-col items-center">
                   <a href="https://youtu.be/LAhzsUIc2Ok?si=PX0NmgEAkHNbB-iy" target="_blank" rel="noopener noreferrer">
-                    <Image src="/Miravi.jpg" alt="Miravi" width={240} height={240} className="rounded shadow transition-transform duration-300 hover:scale-105 hover:shadow-xl" />
+                    <Image src="/Miravi.jpg" alt="Miravi" width={240} height={240} className="rounded shadow transition-transform duration-300 hover:scale-105 hover:shadow-xl w-full h-auto object-contain" />
                   </a>
                   <div className="mt-4 text-center">
-                    <div className="font-semibold">{translate('albums.miravi.title')}</div>
+                    <div className="font-semibold text-gray-900">{translate('albums.miravi.title')}</div>
                     <a href="https://youtu.be/LAhzsUIc2Ok?si=PX0NmgEAkHNbB-iy" target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex items-center gap-2 text-orange-600 hover:text-orange-800 font-medium">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6A2.25 2.25 0 005.25 5.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M18 15l3-3m0 0l-3-3m3 3H9" />
@@ -249,10 +251,10 @@ export default function Home() {
                 {/* Va Dobareh Bahar */}
                 <div className="flex flex-col items-center">
                   <a href="https://youtu.be/CtCL3cXmxno?si=9AwLUNijLluxeOnz" target="_blank" rel="noopener noreferrer">
-                    <Image src="/Va-Dobareh-Bahar.jpg" alt="Va Dobareh Bahar" width={240} height={240} className="rounded shadow transition-transform duration-300 hover:scale-105 hover:shadow-xl" />
+                    <Image src="/Va-Dobareh-Bahar.jpg" alt="Va Dobareh Bahar" width={240} height={240} className="rounded shadow transition-transform duration-300 hover:scale-105 hover:shadow-xl w-full h-auto object-contain" />
                   </a>
                   <div className="mt-4 text-center">
-                    <div className="font-semibold">{translate('albums.vaDobarehBahar.title')}</div>
+                    <div className="font-semibold text-gray-900">{translate('albums.vaDobarehBahar.title')}</div>
                     <a href="https://youtu.be/CtCL3cXmxno?si=9AwLUNijLluxeOnz" target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex items-center gap-2 text-orange-600 hover:text-orange-800 font-medium">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6A2.25 2.25 0 005.25 5.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M18 15l3-3m0 0l-3-3m3 3H9" />
@@ -267,10 +269,10 @@ export default function Home() {
                 {/* Chang-e-Eshgh */}
                 <div className="flex flex-col items-center">
                   <a href="https://open.spotify.com/track/0tqW4oRK1w3AzMbiNyLPof?si=QgFD8c9OQSS-5eTI2FvJXw" target="_blank" rel="noopener noreferrer">
-                    <Image src="/Chang-e-Eshgh.jpg" alt="Chang-e-Eshgh" width={240} height={240} className="rounded shadow transition-transform duration-300 hover:scale-105 hover:shadow-xl" />
+                    <Image src="/Chang-e-Eshgh.jpg" alt="Chang-e-Eshgh" width={240} height={240} className="rounded shadow transition-transform duration-300 hover:scale-105 hover:shadow-xl w-full h-auto object-contain" />
                   </a>
                   <div className="mt-4 text-center">
-                    <div className="font-semibold">"Chang-e-Eshgh"</div>
+                    <div className="font-semibold text-gray-900">"Chang-e-Eshgh"</div>
                     <a href="https://open.spotify.com/track/0tqW4oRK1w3AzMbiNyLPof?si=QgFD8c9OQSS-5eTI2FvJXw" target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex items-center gap-2 text-orange-600 hover:text-orange-800 font-medium">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6A2.25 2.25 0 005.25 5.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M18 15l3-3m0 0l-3-3m3 3H9" />
@@ -282,9 +284,10 @@ export default function Home() {
                 {/* Sanam-e-Nahanjar */}
                 <div className="flex flex-col items-center">
                   <a href="https://open.spotify.com/track/2vs9GfwwRR1f0G3OBtfTaJ?si=I56bsGIYSeWqDVTUyiZuEw" target="_blank" rel="noopener noreferrer">
-                    <Image src="/Sanam-e-Nahanjar.jpg" alt="Sanam-e-Nahanjar" width={240} height={240} className="rounded shadow transition-transform duration-300 hover:scale-105 hover:shadow-xl" />
+                    <Image src="/Sanam-e-Nahanjar.jpg" alt="Sanam-e-Nahanjar" width={240} height={240} className="rounded shadow transition-transform duration-300 hover:scale-105 hover:shadow-xl w-full h-auto object-contain" />
                   </a>
                   <div className="mt-4 text-center">
+                    <div className="font-semibold text-gray-900">"Sanam-e-Nahanjar" Ali Ghamsari</div>
                     <div className="font-semibold">"Sanam-e-Nahanjar" Ali Ghamsari</div>
                     <a href="https://open.spotify.com/track/2vs9GfwwRR1f0G3OBtfTaJ?si=I56bsGIYSeWqDVTUyiZuEw" target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex items-center gap-2 text-orange-600 hover:text-orange-800 font-medium">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
@@ -297,10 +300,10 @@ export default function Home() {
                 {/* Lullaby-Azaldi */}
                 <div className="flex flex-col items-center">
                   <a href="https://www.festivalnikon.fr/en/video/2024/6296" target="_blank" rel="noopener noreferrer">
-                    <Image src="/Lullaby-Azaldi.jpg" alt="Lullaby-Azaldi" width={240} height={240} className="rounded shadow transition-transform duration-300 hover:scale-105 hover:shadow-xl" />
+                    <Image src="/Lullaby-Azaldi.jpg" alt="Lullaby-Azaldi" width={240} height={240} className="rounded shadow transition-transform duration-300 hover:scale-105 hover:shadow-xl w-full h-auto object-contain" />
                   </a>
                   <div className="mt-4 text-center">
-                    <div className="font-semibold">Film Score for "Lullaby-Azaldi"<br/>Directed by Aurélien Cavagna</div>
+                    <div className="font-semibold text-gray-900">Film Score for "Lullaby-Azaldi"<br/>Directed by Aurélien Cavagna</div>
                     <a href="https://www.festivalnikon.fr/en/video/2024/6296" target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex items-center gap-2 text-orange-600 hover:text-orange-800 font-medium">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6A2.25 2.25 0 005.25 5.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M18 15l3-3m0 0l-3-3m3 3H9" />
@@ -313,19 +316,19 @@ export default function Home() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
                 {/* Moj-e-Soda */}
                 <div className="flex flex-col items-center">
-                  <Image src="/Moj-e-Soda.jpg" alt="Moj-e-Soda" width={240} height={240} className="rounded shadow transition-transform duration-300 hover:scale-105 hover:shadow-xl" />
+                  <Image src="/Moj-e-Soda.jpg" alt="Moj-e-Soda" width={240} height={240} className="rounded shadow transition-transform duration-300 hover:scale-105 hover:shadow-xl w-full h-auto object-contain" />
                   <div className="mt-4 text-center">
-                    <div className="font-semibold">Moj-e-Soda</div>
+                    <div className="font-semibold text-gray-900">Moj-e-Soda</div>
                     <span className="block text-gray-500 text-sm mt-1">Old Music Album</span>
                   </div>
                 </div>
                 {/* Darius-the-Great */}
                 <div className="flex flex-col items-center">
                   <a href="https://youtu.be/CT_KtiGv3qM?si=ZvYBK1Rq-BI02o1y" target="_blank" rel="noopener noreferrer">
-                    <Image src="/Darius-the-Great.jpg" alt="Darius-the-Great" width={240} height={240} className="rounded shadow transition-transform duration-300 hover:scale-105 hover:shadow-xl" />
+                    <Image src="/Darius-the-Great.jpg" alt="Darius-the-Great" width={240} height={240} className="rounded shadow transition-transform duration-300 hover:scale-105 hover:shadow-xl w-full h-auto object-contain" />
                   </a>
                   <div className="mt-4 text-center">
-                    <div className="font-semibold">Darius-the-Great composer Farya Faraji Persian</div>
+                    <div className="font-semibold text-gray-900">Darius-the-Great composer Farya Faraji Persian</div>
                     <a href="https://youtu.be/CT_KtiGv3qM?si=ZvYBK1Rq-BI02o1y" target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex items-center gap-2 text-orange-600 hover:text-orange-800 font-medium">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6A2.25 2.25 0 005.25 5.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M18 15l3-3m0 0l-3-3m3 3H9" />
@@ -336,9 +339,9 @@ export default function Home() {
                 </div>
                 {/* Paeiz-Ta-Paeiz */}
                 <div className="flex flex-col items-center">
-                  <Image src="/Paeiz-Ta-Paeiz.jpg" alt="Paeiz-Ta-Paeiz" width={240} height={240} className="rounded shadow transition-transform duration-300 hover:scale-105 hover:shadow-xl" />
+                  <Image src="/Paeiz-Ta-Paeiz.jpg" alt="Paeiz-Ta-Paeiz" width={240} height={240} className="rounded shadow transition-transform duration-300 hover:scale-105 hover:shadow-xl w-full h-auto object-contain" />
                   <div className="mt-4 text-center">
-                    <div className="font-semibold">Paeiz-Ta-Paeiz</div>
+                    <div className="font-semibold text-gray-900">Paeiz-Ta-Paeiz</div>
                     <span className="block text-gray-500 text-sm mt-1">Old Music Album</span>
                   </div>
                 </div>
@@ -347,10 +350,10 @@ export default function Home() {
                 {/* Mastanye */}
                 <div className="flex flex-col items-center">
                   <a href="https://youtu.be/YMDfraipmA8?si=VLUFVQKeiAgEgt67" target="_blank" rel="noopener noreferrer">
-                    <Image src="/Mastanye.jpg" alt="Mastanye" width={320} height={400} className="rounded shadow transition-transform duration-300 hover:scale-105 hover:shadow-xl" />
+                    <Image src="/Mastanye.jpg" alt="Mastanye" width={320} height={400} className="rounded shadow transition-transform duration-300 hover:scale-105 hover:shadow-xl w-full h-auto object-contain" />
                   </a>
                   <div className="mt-8 text-center">
-                    <div className="font-semibold text-xl mb-2">Film Score for "Mastanye" directed by Sharan Art (India)</div>
+                    <div className="font-semibold text-xl mb-2 text-gray-900">Film Score for "Mastanye" directed by Sharan Art (India)</div>
                     <a href="https://youtu.be/YMDfraipmA8?si=VLUFVQKeiAgEgt67" target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex items-center gap-2 text-orange-600 font-medium">
                       <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' strokeWidth={1.5} stroke='currentColor' className='w-5 h-5'>
                         <path strokeLinecap='round' strokeLinejoin='round' d='M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6A2.25 2.25 0 005.25 5.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M18 15l3-3m0 0l-3-3m3 3H9' />
@@ -361,9 +364,9 @@ export default function Home() {
                 </div>
                 {/* Dinesht */}
                 <div className="flex flex-col items-center">
-                  <Image src="/Dinesht.jpg" alt="Dinesht" width={320} height={400} className="rounded shadow transition-transform duration-300 hover:scale-105 hover:shadow-xl" />
+                  <Image src="/Dinesht.jpg" alt="Dinesht" width={320} height={400} className="rounded shadow transition-transform duration-300 hover:scale-105 hover:shadow-xl w-full h-auto object-contain" />
                   <div className="mt-8 text-center">
-                    <div className="font-semibold text-xl mb-2">Dinesht Bakhtiari folk music album</div>
+                    <div className="font-semibold text-xl mb-2 text-gray-900">Dinesht Bakhtiari folk music album</div>
                     <div className="mt-2 inline-flex items-center gap-2 text-orange-600 font-medium">
                       Ney player in Dinesht Concert: Ali Farbodnia
                     </div>
@@ -374,11 +377,11 @@ export default function Home() {
           </section>
 
           {/* Performances & Concerts Section */}
-          <section id="performances" className="mt-16 scroll-mt-24">
+          <section id="performances" className="mt-8 sm:mt-16 scroll-mt-24 w-full">
             <h2 className="text-3xl font-bold mb-6 text-gray-800">{translate('nav.performances')}</h2>
             <div className="border-t border-gray-200 pt-6">
               {/* Part 1: Hamnavazan e Hesar Ensemble */}
-              <div className="flex flex-col md:flex-row gap-8 bg-[#f7f5f2] p-8 rounded-xl shadow-md items-stretch">
+              <div className="flex flex-col md:flex-row gap-4 sm:gap-8 bg-[#f7f5f2] p-2 sm:p-6 rounded-xl shadow-md items-stretch mb-8">
                 {/* Left: Info */}
                 <div className="flex-1 flex flex-col justify-between bg-white rounded-lg p-6 border border-orange-100">
                   <div>
@@ -421,7 +424,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="mt-8 text-center">
-                  <div className="font-semibold text-xl mb-2">Hamnavazan-e Hesar Ensemble</div>
+                  <div className="font-semibold text-xl mb-2 text-gray-900">Hamnavazan-e Hesar Ensemble</div>
                   <a href="https://youtu.be/4lw9bp_buzs?si=8WK6cUgSOE-8IGqc" target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex items-center gap-2 text-orange-600 font-medium">
                     <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' strokeWidth={1.5} stroke='currentColor' className='w-5 h-5'>
                       <path strokeLinecap='round' strokeLinejoin='round' d='M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6A2.25 2.25 0 005.25 5.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M18 15l3-3m0 0l-3-3m3 3H9' />
@@ -460,7 +463,7 @@ export default function Home() {
                   <div className="w-full max-w-md h-[400px] flex items-center justify-center overflow-hidden mb-4">
                     <Image src="/VAZIRI.jpg" alt="Vaziri Music Orchestra Poster" width={320} height={400} className="object-contain w-full h-full" />
                   </div>
-                  <div className="font-semibold text-xl mb-2">{translate('performances.vaziri.title')}</div>
+                  <div className="font-semibold text-xl mb-2 text-gray-900">{translate('performances.vaziri.title')}</div>
                   <div className="text-orange-600 font-medium text-base">{translate('performances.vaziri.concerts')}</div>
                 </div>
               </div>
@@ -532,7 +535,7 @@ export default function Home() {
                     <Image src="/Ali-fajr3.jpg" alt="Ali Farbodnia with ensemble at Fajr Festival" width={600} height={620} className="object-contain w-full h-full" />
                   </div>
                   <div className="text-center max-w-2xl mx-auto">
-                    <div className="font-medium text-lg mb-1">"Traditional Iranian Music"</div>
+                    <div className="font-medium text-lg mb-1 text-gray-900">"Traditional Iranian Music"</div>
                     <div className="text-gray-700">34th Fajr International Music Festival, Azadi Hall, Tehran (2019)</div>
                   </div>
                 </div>
@@ -640,7 +643,7 @@ export default function Home() {
                 <div className="flex-1 flex flex-col gap-6 min-w-[320px] max-w-xl">
                   <div className="flex flex-col items-end mb-2">
                     <div className="text-right">
-                      <div className="font-medium text-lg">"Traditional Iranian Music"<br/>The Best of master mohamadreza lotfi<br/>2017 Tehran</div>
+                      <div className="font-medium text-lg text-gray-900">"Traditional Iranian Music"<br/>The Best of master mohamadreza lotfi<br/>2017 Tehran</div>
                     </div>
                     <div className="w-40 h-6 bg-orange-400 rounded mt-2" />
                   </div>
@@ -862,46 +865,46 @@ export default function Home() {
           </section>
 
           {/* Contact Section - Thank You & Ways to Contact */}
-          <section id="contact" className="mt-16 scroll-mt-24">
+          <section id="contact" className="mt-8 sm:mt-16 scroll-mt-24 w-full">
             {/* Top orange accent bars */}
             <div className="w-full flex flex-col">
               <div className="h-4 w-full bg-orange-300" />
               <div className="h-4 w-full bg-orange-600" />
               <div className="h-4 w-full bg-orange-400" />
             </div>
-            <div className="flex flex-col items-center justify-center py-20 px-4 bg-white border border-orange-200 rounded-b-2xl">
-              <div className="text-[3rem] md:text-[4rem] font-bold mb-4" style={{ fontFamily: 'cursive, Brush Script MT, Segoe Script, sans-serif' }}>
+            <div className="flex flex-col items-center justify-center py-8 sm:py-16 px-2 sm:px-4 bg-white border border-orange-200 rounded-b-2xl">
+              <div className="text-3xl sm:text-[3rem] md:text-[4rem] font-bold mb-4 text-center text-gray-900" style={{ fontFamily: 'cursive, Brush Script MT, Segoe Script, sans-serif' }}>
                 {translate('contact.thankYou')}
               </div>
               <hr className="w-2/3 max-w-lg border-gray-400 my-6" />
-              <div className="text-3xl md:text-4xl font-semibold mb-8" style={{ fontFamily: 'cursive, Brush Script MT, Segoe Script, sans-serif' }}>
+              <div className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-8 text-center text-gray-900" style={{ fontFamily: 'cursive, Brush Script MT, Segoe Script, sans-serif' }}>
                 {translate('contact.waysToContact')}
               </div>
-              <div className="flex flex-col gap-4 text-lg md:text-xl font-medium">
-                <div className="flex items-center gap-4">
+              <div className="flex flex-col gap-4 text-base sm:text-lg md:text-xl font-medium w-full max-w-md">
+                <div className="flex items-center gap-4 justify-center">
                   <span className="bg-black text-white rounded-full p-2 text-2xl flex items-center justify-center"><FaEnvelope /></span>
                   <span className="bg-orange-200 rounded-full p-2 text-xl flex items-center justify-center"><FaLink /></span>
-                  <a href="mailto:a.farbodnia@gmail.com" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-orange-600 transition-colors">{translate('contact.email')}</a>
+                  <a href="mailto:a.farbodnia@gmail.com" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-orange-600 transition-colors break-all">{translate('contact.email')}</a>
                 </div>
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-4 justify-center">
                   <span className="bg-black text-white rounded-full p-2 text-2xl flex items-center justify-center"><FaYoutube /></span>
                   <span className="bg-orange-200 rounded-full p-2 text-xl flex items-center justify-center"><FaLink /></span>
-                  <a href="https://youtube.com/@alifarbodnia?si=brU9QaL-TaX8eqCF" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-orange-600 transition-colors">{translate('contact.youtube')}</a>
+                  <a href="https://youtube.com/@alifarbodnia?si=brU9QaL-TaX8eqCF" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-orange-600 transition-colors break-all">{translate('contact.youtube')}</a>
                 </div>
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-4 justify-center">
                   <span className="bg-black text-white rounded-full p-2 text-2xl flex items-center justify-center"><FaInstagram /></span>
                   <span className="bg-orange-200 rounded-full p-2 text-xl flex items-center justify-center"><FaLink /></span>
-                  <a href="https://www.instagram.com/alifarbodnia/profilecard/?igsh=MXI3Z2xyd2h4cTNobQ==" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-orange-600 transition-colors">{translate('contact.instagram')}</a>
+                  <a href="https://www.instagram.com/alifarbodnia/profilecard/?igsh=MXI3Z2xyd2h4cTNobQ==" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-orange-600 transition-colors break-all">{translate('contact.instagram')}</a>
                 </div>
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-4 justify-center">
                   <span className="bg-black text-white rounded-full p-2 text-2xl flex items-center justify-center"><FaLink /></span>
                   <span className="bg-orange-200 rounded-full p-2 text-xl flex items-center justify-center"><FaLink /></span>
-                  <a href="https://www.fiverr.com/s/xX7kD9a" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-orange-600 transition-colors">{translate('contact.fiverr')}</a>
+                  <a href="https://www.fiverr.com/s/xX7kD9a" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-orange-600 transition-colors break-all">{translate('contact.fiverr')}</a>
                 </div>
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-4 justify-center">
                   <span className="bg-black text-white rounded-full p-2 text-2xl flex items-center justify-center"><FaSpotify /></span>
                   <span className="bg-orange-200 rounded-full p-2 text-xl flex items-center justify-center"><FaLink /></span>
-                  <a href="https://open.spotify.com/artist/7s8YtMTj8iNp9PUVX3a3CS?si=EtS7qZmJTsaCvVXtKuHQCQ" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-orange-600 transition-colors">{translate('contact.spotify')}</a>
+                  <a href="https://open.spotify.com/artist/7s8YtMTj8iNp9PUVX3a3CS?si=EtS7qZmJTsaCvVXtKuHQCQ" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-orange-600 transition-colors break-all">{translate('contact.spotify')}</a>
                 </div>
               </div>
             </div>
