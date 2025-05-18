@@ -951,28 +951,23 @@ export default function Home() {
               </div>
               <div className="flex flex-col gap-4 text-base sm:text-lg md:text-xl font-medium w-full max-w-md">
                 <div className="flex items-center gap-4 justify-center">
-                  <span className="bg-black text-white rounded-full p-2 text-2xl flex items-center justify-center"><FaEnvelope /></span>
-                  <span className="bg-orange-200 rounded-full p-2 text-xl flex items-center justify-center"><FaLink /></span>
+                  <span className="bg-orange-500 text-white rounded-full p-2 text-2xl flex items-center justify-center"><FaEnvelope /></span>
                   <a href="mailto:a.farbodnia@gmail.com" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-orange-600 transition-colors break-all">{translate('contact.email')}</a>
                 </div>
                 <div className="flex items-center gap-4 justify-center">
-                  <span className="bg-black text-white rounded-full p-2 text-2xl flex items-center justify-center"><FaYoutube /></span>
-                  <span className="bg-orange-200 rounded-full p-2 text-xl flex items-center justify-center"><FaLink /></span>
+                  <span className="bg-orange-500 text-white rounded-full p-2 text-2xl flex items-center justify-center"><FaYoutube /></span>
                   <a href="https://youtube.com/@alifarbodnia?si=brU9QaL-TaX8eqCF" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-orange-600 transition-colors break-all">{translate('contact.youtube')}</a>
                 </div>
                 <div className="flex items-center gap-4 justify-center">
-                  <span className="bg-black text-white rounded-full p-2 text-2xl flex items-center justify-center"><FaInstagram /></span>
-                  <span className="bg-orange-200 rounded-full p-2 text-xl flex items-center justify-center"><FaLink /></span>
+                  <span className="bg-orange-500 text-white rounded-full p-2 text-2xl flex items-center justify-center"><FaInstagram /></span>
                   <a href="https://www.instagram.com/alifarbodnia/profilecard/?igsh=MXI3Z2xyd2h4cTNobQ==" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-orange-600 transition-colors break-all">{translate('contact.instagram')}</a>
                 </div>
                 <div className="flex items-center gap-4 justify-center">
-                  <span className="bg-black text-white rounded-full p-2 text-2xl flex items-center justify-center"><FaLink /></span>
-                  <span className="bg-orange-200 rounded-full p-2 text-xl flex items-center justify-center"><FaLink /></span>
+                  <span className="bg-orange-500 text-white rounded-full p-2 text-2xl flex items-center justify-center"><FaLink /></span>
                   <a href="https://www.fiverr.com/s/xX7kD9a" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-orange-600 transition-colors break-all">{translate('contact.fiverr')}</a>
                 </div>
                 <div className="flex items-center gap-4 justify-center">
-                  <span className="bg-black text-white rounded-full p-2 text-2xl flex items-center justify-center"><FaSpotify /></span>
-                  <span className="bg-orange-200 rounded-full p-2 text-xl flex items-center justify-center"><FaLink /></span>
+                  <span className="bg-orange-500 text-white rounded-full p-2 text-2xl flex items-center justify-center"><FaSpotify /></span>
                   <a href="https://open.spotify.com/artist/7s8YtMTj8iNp9PUVX3a3CS?si=EtS7qZmJTsaCvVXtKuHQCQ" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-orange-600 transition-colors break-all">{translate('contact.spotify')}</a>
                 </div>
               </div>
