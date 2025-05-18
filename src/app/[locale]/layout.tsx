@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'Official website of Ali Farbodnia, Iranian folk woodwind instrumentalist and composer',
 };
 
-export default function LocaleLayout({ children, params }: { children: ReactNode; params: { locale: string } }) {
+export default function LocaleLayout({ children, params }) {
   const locale = params.locale;
   
   return (
