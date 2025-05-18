@@ -1,0 +1,23 @@
+{
+  "nav": {
+    "myBook": "Mon Livre",
+    "albums": "Albums & Bandes Sonores",
+    "performances": "Performances & Concerts",
+    "contact": "Contact"
+  },
+  "bio": {
+    "title": "Instrumentiste à vent folklorique et compositeur iranien",
+    "description": "Né en 1983 à Mashhad, en Iran, est un joueur d'instruments à vent folkloriques iraniens tels que le Ney persan, le Duduk, la Cornemuse persane, la Clarinette persane, auteur-compositeur et compositeur, et un membre distingué de la Maison de la Musique iranienne. Il est le fils de Mohammad Farbodnia, un sculpteur iranien renommé et diplômé de l'École des Beaux-Arts de Paris (Promotion 1975).",
+    "description2": "Dès son plus jeune âge, il s'est passionné pour les instruments à vent traditionnels iraniens et a commencé à apprendre le Ney sous la direction de son père. Pendant son adolescence, il a étudié avec plusieurs grands maîtres du Ney et de la clarinette persane, notamment Hassan Kassai, Mohammad Ali Kiani Nejad et Mohammad Mousavi. Il a également étudié le Radif classique de la musique persane avec le légendaire Mohammad Reza Lotfi, sous la supervision duquel il a développé une nouvelle technique de doigté pour le Ney. Cette technique a été publiée plus tard dans son livre \"Nava-ye Ney\" en 2010, qui a été bien accueilli par les étudiants et les passionnés du Ney."
+  },
+  "sections": {
+    "myBook": "Mon Livre",
+    "albums": "ALBUMS & BANDES SONORES",
+    "performances": "Performances & Concerts",
+    "contact": "Contact"
+  },
+  "contact": {
+    "title": "Merci !",
+    "subtitle": "Moyens de me contacter"
+  }
+} 

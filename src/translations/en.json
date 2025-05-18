@@ -1,0 +1,23 @@
+{
+  "nav": {
+    "myBook": "My Book",
+    "albums": "Albums & Soundtracks",
+    "performances": "Performances & Concerts",
+    "contact": "Contact"
+  },
+  "bio": {
+    "title": "Iranian Folk woodwind instrumentalist and composer",
+    "description": "Born in 1983 in Mashhad, Iran, is an Iranian folk wind instrument player such as Persian Ney, Duduk, Persian Bagpipe, Persian Clarinet, songwriter, composer, and an esteemed member of the Iranian House of Music. He is the son of Mohammad Farbodnia, a renowned Iranian sculptor and graduate of the Ecole des Beaux-Arts in Paris (Class of 1975).",
+    "description2": "From early childhood, he was passionate about traditional Iranian wind instruments and began learning the Ney under the guidance of his father. During his teenage years, he studied with several great masters of the Ney and Persian clarinet, including Hassan Kassai, Mohammad Ali Kiani Nejad, and Mohammad Mousavi. He also studied the classical Radif of Persian music with the legendary Mohammad Reza Lotfi, under whose supervision he developed a new fingering technique for the Ney. This technique was later published in his book \"Nava-ye Ney\" in 2010, which was well-received among students and enthusiasts of the Ney."
+  },
+  "sections": {
+    "myBook": "My Book",
+    "albums": "ALBUMS & SOUNDTRACKS",
+    "performances": "Performances & Concerts",
+    "contact": "Contact"
+  },
+  "contact": {
+    "title": "Thank You !",
+    "subtitle": "Ways to contact me"
+  }
+} 

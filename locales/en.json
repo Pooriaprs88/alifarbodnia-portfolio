@@ -1,0 +1,157 @@
+{
+  "greeting": "Hello",
+  "about": "About Me",
+  "contact": "Contact",
+  "site": {
+    "title": "Ali Farbodnia",
+    "subtitle": "Iranian Folk woodwind instrumentalist and composer"
+  },
+  "nav": {
+    "myBook": "My Book",
+    "albums": "Albums & Soundtracks",
+    "performances": "Performances & Concerts",
+    "contact": "Contact"
+  },
+  "bio": {
+    "intro1": "Born in 1983 in Mashhad, Iran, is an Iranian folk wind instrument player such as Persian Ney, Duduk, Persian Bagpipe, Persian Clarinet, songwriter, composer, and an esteemed member of the Iranian House of Music. He is the son of Mohammad Farbodnia, a renowned Iranian sculptor and graduate of the Ecole des Beaux-Arts in Paris (Class of 1975).",
+    "intro2": "From early childhood, he was passionate about traditional Iranian wind instruments and began learning the Ney under the guidance of his father. During his teenage years, he studied with several great masters of the Ney and Persian clarinet, including Hassan Kassai, Mohammad Ali Kiani Nejad, and Mohammad Mousavi. He also studied the classical Radif of Persian music with the legendary Mohammad Reza Lotfi, under whose supervision he developed a new fingering technique for the Ney. This technique was later published in his book 'Nava-ye Ney' in 2010, which was well-received among students and enthusiasts of the Ney."
+  },
+  "badges": {
+    "vazir": "Vazir Music Orchestra",
+    "hesar": "Hamnavazan-e Hesar Ensemble",
+    "sooreh": "Sooreh Music Group",
+    "tar": "Tār Folk Music Group",
+    "lotfi": "The Best of Master Mohammad Reza Lotfi",
+    "khayyam": "Khaneyagaran-e Khayyam Ensemble",
+    "alest": "Alest Music Group"
+  },
+  "book": {
+    "title": "Navaye-Ney",
+    "edition": "3rd Edition",
+    "subtitle": "Parts for the Ney instrument",
+    "description": "The book Navaye Ney was published in 2010 by Chekad Honar Publishing House in Iran. This work presents an innovative fingering method for the Ney, significantly enhancing the ease and efficiency of playing the instrument. The book comprises ten original practice pieces composed by Ali Farbodnia, in addition to a selection of renowned compositions from the Iranian musical repertoire originally written for various instruments, which have been transcribed and arranged for the Ney by the author. Navaye Ney has now reached its third edition and is available to enthusiasts through multiple online platforms.",
+    "publisher": "-Mahoor-",
+    "purchase": "Book purchase"
+  },
+  "albums": {
+    "title": "ALBUMS & SOUNDTRACKS",
+    "duduk": {
+      "title": "Duduk sample pack/company: ancient-sound",
+      "link": "Link: Duduk player: Ali Farbodnia"
+    },
+    "waitingForSun": {
+      "title": "\"Waiting for the sun\"\nComposer: Hisham Kharma",
+      "link": "Link: Ney & Duduk player: Ali Farbodnia"
+    },
+    "mawlana": {
+      "title": "\"Mawlana\" composer: Chaama x Zamane",
+      "link": "Link: Ney player: Ali Farbodnia"
+    },
+    "habrban": {
+      "title": "\"Habrban\" Armenian folk songs\nArrangements by Farya Faraji",
+      "link": "Link: Duduk player: Ali Farbodnia"
+    },
+    "miravi": {
+      "title": "\"Miravi\" Fatemeh Mehlaban\ncomposer: Ali Farbodnia",
+      "link": "Link: composer: Ali Farbodnia"
+    },
+    "vaDobarehBahar": {
+      "title": "\"Va Dobareh Bahar\" Omid Nasri\ncomposer& lyric: Ali Farbodnia",
+      "link": "Link: composer& lyric: Ali Farbodnia"
+    },
+    "changEshgh": {
+      "title": "\"Chang-e-Eshgh\"",
+      "link": "Link: composer & Ney player: Ali Farbodnia"
+    },
+    "sanamENahanjar": {
+      "title": "\"Sanam-e-Nahanjar\" Ali Ghamsari",
+      "link": "Link: Clarinet player: Ali Farbodnia"
+    },
+    "lullabyAzaldi": {
+      "title": "Film Score for \"Lullaby-Azaldi\"\nDirected by Aurélien Cavagna",
+      "link": "Link: Music: Ali Farbodnia"
+    },
+    "majESoda": {
+      "title": "Moj-e-Soda",
+      "subtitle": "Old Music Album"
+    },
+    "dariusTheGreat": {
+      "title": "Darius-the-Great composer Farya Faraji Persian",
+      "link": "Link: Ney: Ali Farbodnia"
+    },
+    "paeizTaPaeiz": {
+      "title": "Paeiz-Ta-Paeiz",
+      "subtitle": "Old Music Album"
+    },
+    "mastanye": {
+      "title": "Film Score for \"Mastanye\" directed by Sharan Art (India)",
+      "link": "Duduk player In This Film: Ali Farbodnia"
+    },
+    "dinesht": {
+      "title": "Dinesht Bakhtiari folk music album",
+      "subtitle": "Ney player in Dinesht Concert: Ali Farbodnia"
+    }
+  },
+  "performances": {
+    "title": "Performances & Concerts",
+    "hesar": {
+      "title": "HAMNAVAZAN E HESAR ENSEMBLE",
+      "subtitle": "LED BY MASTER ALI GHAMSARI",
+      "description": "Ali Ghamsari is one of the successful young talents in Iranian music. He is a tar player and composer who has performed in various festivals. Ali Farbodnia has been collaborating with this young artist since 2017. One of their most notable collaborations is the ten-night successful performance of \"Sanam-e-Nahanjar\" at Arasbaran Hall in Tehran.",
+      "event": "\"Sanam-e Nahanjar\" Concert, Arasbaran Cultural Center, Tehran (2019)",
+      "type": "Music event"
+    },
+    "vaziri": {
+      "title": "VAZIRI MUSIC ORCHESTRA",
+      "subtitle": "BY MASTER KEYVAN SAKET",
+      "description": "Keyvan Saket is one of the greatest contemporary Iranian musicians. He is the leader of the Vaziri music ensemble and has performed with this group around the world. Ali Farbodnia has been collaborating with this ensemble since 2009.",
+      "concerts": "Simorgh Hall, Neyshabur (2009) and Vahdat Hall, Tehran (2020)",
+      "participation": "He has participated as a ney player in recording various Iranian music albums and numerous concerts alongside Master Keyvan Saket. Notable performances include the Neyshabur concert in 2009 and the Vahdat Hall concert in 2020 with vocalist Vahid Taj."
+    },
+    "fajr": {
+      "title": "FAJR FESTIVAL",
+      "subtitle": "KHANEYAGRAN-E-KHAYYAM ENSEMBLE",
+      "description": "Khonyagaran-e-Khayyam music group is one of the best musical groups in eastern Iran, performing Iranian and folk music for the past 15 years. Major Achievements: Among the group's major achievements are being selected as the top group at the 34th Fajr International Music Festival in Tehran in 2019, and being the chosen group at the Mugham Music Festival in Azerbaijan in 2017. Ali Farbodnia continues to collaborate with this group in recording various music albums.\nAli Farbodnia has been working with this group since 2010 as a Ney player and, in some performances, as a composer.",
+      "event": "34th Fajr International Music Festival, Azadi Hall, Tehran (2019)"
+    },
+    "mugham": {
+      "title": "MUGHAM FESTIVAL",
+      "subtitle": "KHANEYAGRAN-E-KHAYYAM ENSEMBLE",
+      "description": "Farbodnia, together with the musical ensemble \"Khonyagaran-e-Khayyam,\" participated in the 2017 Mugham International Festival in Azerbaijan. The group was selected as one of the distinguished ensembles of that year and performed at the festival's closing ceremony held at the Azerbaijan State Conservatory. Farbodnia took part in the group as a Ney player and composer.",
+      "event": "Mugham International Music Festival, Azerbaijan (2017)"
+    },
+    "lotfi": {
+      "title": "THE BEST OF MASTER MOHAMADREZA LOTFI",
+      "subtitle": "2017 TEHRAN",
+      "description": "The best of Master Mohamed Reza Lotfi\nIn 2017, a commemoration for the great Iranian music masters Mohammad Reza Lotfi and Parviz Meshkatian was held at Andisheh Hall in Tehran. For this event, a group was formed from the selected students of Master Mohammad Reza Lotfi, and Ali Farbodnia had the honor of accompanying the group as a ney player.",
+      "contributions": {
+        "title": "Master Lotfi's Contributions",
+        "text": "The performance was a heartfelt tribute that celebrated the profound legacy of Master Lotfi's contributions to Persian classical music. The ensemble, composed of his most dedicated disciples, sought to capture the essence of his unique style—his deep understanding of radif, his emotive improvisations, and his spiritual approach to the tar and setar. The audience was moved by the powerful synergy between the musicians, particularly the delicate interplay between the ney and string instruments, which echoed the master's own teachings on musical dialogue and expression."
+      }
+    },
+    "feyksahne": {
+      "title": "FEYKSAHNE TAR BAND",
+      "subtitle": "ISTANBUL CONCERT 2024",
+      "description": "Music has always been the language of peace for humanity, and it serves as a messenger of peace and friendship among nations. In 2017, Ali Farbodnia founded the \"Tar\" music group with a group of his musician friends, focusing on local Iranian music. Iranian folk music has great potential for international performance, and he has always tried to create a new blend by incorporating instruments from different cultures.\n\nSome of the group's notable performances include the Tirgan Festival in Canada in 2022,\nIstanbul Feyksahne Theater 2024\nMashad Ordibehesht hall 2020"
+    },
+    "sohreh": {
+      "title": "SOHREH MUSIC GROUP",
+      "subtitle": "IZMIR 2022-SOHRE BAND",
+      "description": "Ali Farbodnia performed as a Ney player with the Iranian music group \"Sohreh\" in Izmir in 2022. In this performance, the Iranian vocalist Ms. Roya Raei joined the group as the singer, along with several renowned Iranian musicians such as Farhad Rajabi on tar, Nafiseh Tabatabaei on ney, and the group's leader and santur player Toofan Aytan. This performance was one of the memorable Iranian music events in Izmir."
+    },
+    "alest": {
+      "title": "ALEST MUSIC GROUP",
+      "subtitle": "IZMIR 2025-ALEST BAND",
+      "description": "In April 2025, Ali Farbodnia performed in Izmir with the group Alast. He participated as a ney player, arranger, and vocalist in some pieces. The group included Nafiseh Tabatabaei on ney, Mona Navazi on oud, Amir Haghneer on percussion, and Tufan Ayetan on santur. In this performance, Alast reinterpreted traditional Khorasani music, blending ancient melodies with a fresh orchestral arrangement."
+    }
+  },
+  "contact": {
+    "thankYou": "Thank You !",
+    "waysToContact": "Ways to contact me",
+    "email": "A.farbodnia@gmail.com",
+    "youtube": "My Youtube",
+    "instagram": "My Instagram",
+    "fiverr": "My Fiverr",
+    "spotify": "My Spotify"
+  }
+} 
