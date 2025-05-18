@@ -1,5 +1,6 @@
 import { generateStaticParams } from './generateStaticParams';
 import type { Metadata } from 'next';
+import type { ReactNode } from 'react';
 
 export { generateStaticParams };
 
@@ -8,13 +9,7 @@ export const metadata: Metadata = {
   description: 'Official website of Ali Farbodnia, Iranian folk woodwind instrumentalist and composer',
 };
 
-export default function LocaleLayout({
-  children,
-  params,
-}: {
-  children: React.ReactNode;
-  params: { locale: string };
-}) {
+export default function LocaleLayout({ children, params }: { children: ReactNode; params: { locale: string } }) {
   const locale = params.locale;
   
   return (
